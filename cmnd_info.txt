@@ -1,0 +1,66 @@
+Django Installation >> 
+
+pip install django
+
+
+
+makemigrations  : means create changes and store in file
+migrate : apply pending changes created by makemigrations
+####################################################
+
+django-admin startproject text   >>  create folder structure 
+cd text 
+python manage.py runserver       >> start or Run DEV server
+python manage.py startapp utilities  >> create new folder 
+
+python manage.py migrate    	 >>  table required for apps - create it  (apply migration )  .  models.py got created with this.    create default tables  for us
+
+python manage.py makemigrations  >> store table info           (python manage.py makemigrations EMP_Register)
+
+python manage.py createsuperuser  >>  Admin : register product  
+user - admin
+emaild - rudra.hublimath@gmail.com
+pwd - admin
+
+pip install pycrypto
+python -m pip install Pillow
+
+pip install django-filter   >>   Search result make easier    (add in settings.py :    'django_filters',)
+
+python manage.py shell   >> open in shell 
+from accounts.models import *    
+###### DB commands ###############
+
+pip install mysqlclient
+pip install mysql-connector-python      >> For mysql
+
+pip install mysql-connector    
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'devdb',
+        'USER': 'HUBLIMATH',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+
+
+####################################################
+
+
+python manage.py startapp EMP_Register
+
+python manage.py migrate
+python manage.py makemigrations EMP_Register
+python manage.py sqlmigrate EMP_Register 0001
+python manage.py migrate
+
+use "jumbotron" - Bootstrap  >>
+pip install django-crispy-forms     >>> for better forms 
+
+
+####################################################
